@@ -19,18 +19,18 @@ class SingleColorPalette extends Component {
         return shades.slice(1);
     }
     render() { 
-        const colorBoxes = this._shades.map(color => {
-            console.log('Iterated');
+        const colorBoxes = this._shades.map(color => (
             <ColorBox 
-                key={color.id} 
+                key={color.name} 
                 name={color.name} 
-                color={color.hex}/>
-        });
+                background={color.hex}
+                showLink={false}
+            />
+        ));
         console.log(this._shades);
         return ( 
-            <div className='SingleColorPalette'>
-                <h1>Single Color Palette</h1>
-                {colorBoxes}
+            <div className='Palette'>
+                <div className='Palette-colors'>{colorBoxes}</div>
             </div>
         );
     }
