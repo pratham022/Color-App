@@ -5,11 +5,41 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/styles';
 
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 import './Navbar.css';
+
+const styles = {
+    Navbar: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        height: '6vh',
+    },
+    logo: {
+        marginRight: '15px',
+        padding: '0 13px',
+        fontSize: '22px',
+        backgroundColor: '#eceff1',
+        fontFamily: 'Roboto',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        alignItems: 'center',
+        '& a': {
+            textDecoration: 'none',
+            color: 'black'
+        }
+    },
+    slider: {
+        width: '340px',
+        margin: '0 10px',
+        display: 'inline-block'
+    }
+}
 
 class Navbar extends Component {
     constructor(props) {
@@ -34,17 +64,17 @@ class Navbar extends Component {
         });
     }
     render() { 
-        const { level, changeLevel, handleChange, showingAllColors } = this.props;
+        const { level, changeLevel, handleChange, showingAllColors, classes } = this.props;
         const { format } = this.state;
         return ( 
-           <header className='Navbar'>
-               <div className='logo'>
+           <header className={classes.Navbar}>
+               <div className={classes.logo}>
                    <Link to='/'>reactcolorpicker</Link>
                </div>
                {showingAllColors && (
-                    <div className='slider-container'>
+                    <div>
                         <span>Level: {level}</span>
-                        <div className='slider'>
+                        <div className={classes.slider}>
                             <Slider 
                                 defaultValue={level} 
                                 min={100} 
@@ -88,5 +118,6 @@ class Navbar extends Component {
         );
     }
 }
+
  
-export default Navbar;
+export default withStyles(styles)(Navbar);
