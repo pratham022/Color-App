@@ -10,8 +10,10 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import Button from "@material-ui/core/Button";
+import { ChromePicker } from 'react-color';
 
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const styles = theme => ({
   root: {
@@ -72,7 +74,12 @@ const styles = theme => ({
 
 class NewPaletteForm extends Component {
   state = {
-    open: false
+    open: false,
+    background: '#fff'
+  };
+
+  handleChangeComplete = (color) => {
+    this.setState({ background: color.hex });
   };
 
   handleDrawerOpen = () => {
@@ -125,6 +132,18 @@ class NewPaletteForm extends Component {
             </IconButton>
           </div>
           <Divider />
+
+          <Typography variant='h4'>Design Your Palette</Typography>
+          <div>
+            <Button variant='contained' color='secondary'>CLEAR PALETTE</Button>
+            <Button variant='contained' color='primary'>RANDOM COLOR</Button>
+          </div>
+          <ChromePicker
+            color={ this.state.background }
+            onChangeComplete={ this.handleChangeComplete }
+          />
+          <Button variant='contained' color='primary'>ADD COLOR</Button>
+
         </Drawer>
         <main
           className={classNames(classes.content, {
