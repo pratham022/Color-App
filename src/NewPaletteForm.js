@@ -74,8 +74,9 @@ const styles = theme => ({
 
 class NewPaletteForm extends Component {
   state = {
-    open: false,
-    background: '#fff'
+    open: true,
+    background: '#3434B8',
+    colors: ['purple', '#e15764']
   };
 
   handleChangeComplete = (color) => {
@@ -89,6 +90,12 @@ class NewPaletteForm extends Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
+
+  addNewColor = () => {
+      this.setState({
+          colors: [...this.state.colors, this.state.background]
+      })
+  }
 
   render() {
     const { classes } = this.props;
@@ -142,7 +149,13 @@ class NewPaletteForm extends Component {
             color={ this.state.background }
             onChangeComplete={ this.handleChangeComplete }
           />
-          <Button variant='contained' color='primary'>ADD COLOR</Button>
+          <Button 
+            variant='contained' 
+            color='primary'
+            style={{backgroundColor: this.state.background}}
+            onClick={this.addNewColor}>
+                ADD COLOR
+          </Button>
 
         </Drawer>
         <main
@@ -151,6 +164,11 @@ class NewPaletteForm extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
+          <ul>
+              {this.state.colors.map(color => (
+                  <li>{color}</li>
+              ))}
+          </ul>
         </main>
       </div>
     );
