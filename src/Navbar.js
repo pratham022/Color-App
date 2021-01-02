@@ -11,6 +11,7 @@ import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 import './Navbar.css';
+import sizes from './styles/sizes';
 
 const styles = {
     Navbar: {
@@ -33,12 +34,18 @@ const styles = {
         '& a': {
             textDecoration: 'none',
             color: 'black'
+        },
+        [sizes.down('xs')]: {
+            display: 'none'
         }
     },
     slider: {
         width: '340px',
         margin: '0 10px',
-        display: 'inline-block'
+        display: 'inline-block',
+        [sizes.down('md')]: {
+            width: '150px'
+        }
     }
 }
 
