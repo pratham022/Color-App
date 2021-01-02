@@ -14,8 +14,11 @@ class PaletteMetaForm extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            newPaletteName: ''
+            newPaletteName: '',
+            stage: 'form',
         }
+        this.showEmojiPicker = this.showEmojiPicker.bind(this);
+        this.savePalette = this.savePalette.bind(this);
     }
     componentDidMount() {
         ValidatorForm.addValidationRule('isPaletteNameUnique', value => (
@@ -29,20 +32,33 @@ class PaletteMetaForm extends Component {
           [evt.target.name]: evt.target.value
         });
     }
+    showEmojiPicker() {
+        this.setState({
+            stage: 'emoji'
+        })
+    }
+    savePalette(newEmoji) {
+        
+        const newPalette = {paletteName: this.state.newPaletteName, emoji: newEmoji.native};
+        this.props.handleSubmit(newPalette);
+    }
 
     render() { 
         const { newPaletteName } = this.state;
         const {handleClose, open} = this.props;
         return ( 
             <div>
-                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <Dialog open={open && this.state.stage === 'emoji'} onClose={handleClose}>
+                <DialogTitle id="form-dialog-title">Pick a Palette Emoji</DialogTitle>
+                    <Picker onSelect={this.savePalette} title='Pick a Palette Emoji'/>
+                </Dialog>
+                <Dialog open={open && this.state.stage === 'form'} onClose={handleClose} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
-                    <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
+                    <ValidatorForm onSubmit={this.showEmojiPicker}>
                         <DialogContent>
                             <DialogContentText>
                                 PLease enter a name for your new beautiful palette. Make sure it's unique!
                             </DialogContentText>
-                            <Picker />
                         
                             <TextValidator 
                                 label='Palette Name' 
