@@ -7,6 +7,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import Button from "@material-ui/core/Button";
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { Link } from 'react-router-dom';
@@ -59,7 +60,7 @@ class PaletteFormNav extends Component {
                     onClick={handleDrawerOpen}
                     className={classNames(classes.menuButton, open && classes.hide)}
                     >
-                    <MenuIcon />
+                    <AddToPhotosIcon />
                     </IconButton>
                     <Typography variant='h6' color='inherit' noWrap>
                         Create a Palette
