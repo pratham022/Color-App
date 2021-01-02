@@ -1,7 +1,7 @@
 export default {
     PaletteFooter: {
         backgroundColor: 'white',
-        height: '9vh',
+        height: '12vh',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',

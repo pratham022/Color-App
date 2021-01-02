@@ -1,4 +1,5 @@
 import chroma from 'chroma-js';
+import sizes from './sizes';
 
 export default {
     copyText: {
@@ -19,5 +20,5 @@ export default {
         textAlign: 'center',
         lineHeight: '30px',
         textTransform: 'uppercase',
-    }
+    },
 }

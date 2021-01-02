@@ -30,7 +30,7 @@ class ColorBox extends Component {
         const isLightColor = chroma(background).luminance() >= 0.5;
         return ( 
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
-                <div style={{background: background}} className='ColorBox'>
+                <div style={{background: background}} className={`ColorBox`}>
                     <div style={{background: background}} className={`copy-overlay ${copied && 'show'}`} />   {/* This div will grow and will take the entire screen when copied! */}
                     <div className={`copy-msg ${copied && 'show'}`}>
                         <h1>copied!</h1>

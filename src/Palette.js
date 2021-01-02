@@ -56,7 +56,7 @@ class Palette extends Component {
                     changeLevel={this.changeLevel} 
                     handleChange={this.changeFormat} 
                     showingAllColors={true}/>
-                <div className='Palette-colors'>
+                <div className='Palette-colors' style={{background: 'white'}}>
                     {/* bunch of color boxes */}
                     {colorBoxes}
                 </div>

@@ -1,6 +1,6 @@
 export default {
     root: {
-        height: '100%',
+        height: '80%',
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',

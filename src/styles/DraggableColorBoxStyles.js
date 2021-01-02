@@ -2,10 +2,10 @@ const styles = {
     root: {
         width: '20%',
         height: '25%',
-        margin: '0 auto',
+        margin: '0 0',
         display: 'inline-block',
         position: 'relative',
-        marginBottom: '-3.5px',
+        marginBottom: '-5px',
         '&:hover svg': {
             color: 'white',
             transform: 'scale(1.5)'

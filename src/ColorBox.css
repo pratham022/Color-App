@@ -1,17 +1,51 @@
 .ColorBox {
     width: 20%;
     height: 25%;
-    margin: 0 auto;
+    margin: 0 0;
     display: inline-block;
     position: relative;
     cursor: pointer;
-    margin-bottom: -3.5px;
+    margin-bottom: -3.9px
 }
 
 .SingleColorPalette .ColorBox {
     height: 50%;
 }
+/* --------------------------------------------------------------------------- */
+@media all and (max-width: 1200px) {
+    .ColorBox {
+        width: 25%;
+        height: 20%;
+    }
+    .SingleColorPalette .ColorBox{
+        width: 25%;
+        height: 10%;  
+    }
+}
 
+@media all and (max-width: 992px) {
+    .ColorBox {
+        width: 50%;
+        height: 10%;
+    }
+    .SingleColorPalette .ColorBox{
+        width: 25%;
+        height: 10%;  
+    }
+}
+
+@media all and (max-width: 576px) {
+    .ColorBox {
+        width: 100%;
+        height: 5%;
+    }
+    .SingleColorPalette .ColorBox{
+        width: 100%;
+        height: 10%;  
+    }
+}
+
+/* ------------------------------------------------------------------------- */
 .go-back {
     background: #000000;
 }
