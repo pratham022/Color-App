@@ -1,16 +1,25 @@
+import sizes from './sizes';
+
 export default {
     root: {
-        height: '80%',
+        backgroundColor: 'blue',
+        height: '100vh',
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
     },
     container: {
-        width: '60%',
+        width: '50%',
         display: 'flex',
         alignItems: 'flex-start',
         flexDirection: 'column',
         flexWrap: 'wrap',
+        [sizes.down('xl')]: {
+            width: '80%'
+        },
+        [sizes.down('xs')]: {
+            width: '75%'
+        }
 
 
     },
@@ -29,6 +38,12 @@ export default {
         width: '100%',
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 30%)',
-        gridGap: '5%',
+        gridGap: '1.5rem',
+        [sizes.down('md')]: {
+            gridTemplateColumns: 'repeat(2, 50%)'
+        },
+        [sizes.down('xs')]: {
+            gridTemplateColumns: 'repeat(1, 100%)'
+        }
     }
 };
