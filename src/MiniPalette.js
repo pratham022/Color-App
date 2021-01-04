@@ -12,7 +12,7 @@ class MiniPalette extends Component {
     }
     deletePalette(evt) {
         evt.stopPropagation();              // makes sure that we are not changing the routes
-        this.props.handleDelete(this.props.id)
+        this.props.openDialog(this.props.id)
     }
     render() {
         const {classes, paletteName, emoji, colors, handleClick} = this.props; 
