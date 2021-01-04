@@ -19,7 +19,7 @@ class Palette extends Component {
         this.changeFormat = this.changeFormat.bind(this);
     }
     changeLevel(level) {
-        console.log(level);
+        // console.log(level);
         this.setState({
             level: level
         })
@@ -37,7 +37,7 @@ class Palette extends Component {
         const emoji = this.props.palette.emoji;
         const id = this.props.palette.id;
         const classes = this.props.classes;
-        console.log(`Color format: ${format}`);
+        // console.log(`Color format: ${format}`);
         const colorBoxes = colors[level].map(color => 
             (<ColorBox 
                 background={color[format]} 

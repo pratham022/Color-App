@@ -30,8 +30,8 @@ class App extends Component {
     });
   }
   savePalette(newPalette) {
-    console.log('Entered upper save palette method');
-    console.log(newPalette);
+    // console.log('Entered upper save palette method');
+    // console.log(newPalette);
     this.setState({
       palettes: [...this.state.palettes, newPalette]
     }, this.syncLocalStorage);
@@ -39,7 +39,7 @@ class App extends Component {
   }
   deletePalette(id) {
     this.setState(
-      st => ({palettes: st.palettes.filter(palette => palette.id != id)}),
+      st => ({palettes: st.palettes.filter(palette => palette.id !== id)}),
       this.syncLocalStorage
     )
   }

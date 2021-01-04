@@ -45,7 +45,7 @@ class SingleColorPalette extends Component {
                 showLink={false}
             />
         ));
-        console.log(this._shades);
+        // console.log(this._shades);
         return ( 
             <div>
                 <div className={`SingleColorPalette ${classes.Palette}`}>

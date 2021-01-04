@@ -7,7 +7,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/styles';
 
-import Slider, { Range } from 'rc-slider';
+import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 import './Navbar.css';
@@ -29,7 +29,6 @@ const styles = {
         fontFamily: 'Roboto',
         height: '100%',
         display: 'flex',
-        alignItems: 'center',
         alignItems: 'center',
         '& a': {
             textDecoration: 'none',
@@ -72,7 +71,7 @@ class Navbar extends Component {
         });
     }
     render() { 
-        const { level, changeLevel, handleChange, showingAllColors, classes } = this.props;
+        const { level, changeLevel, showingAllColors, classes } = this.props;
         const { format } = this.state;
         return ( 
            <header className={classes.Navbar}>

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
@@ -55,8 +52,8 @@ class PaletteList extends Component {
         this.closeDialog();
     }
     render() { 
-        const {palettes, classes, deletePalette} = this.props;
-        const {openDeleteDialog, deletingId} = this.state;
+        const {palettes, classes } = this.props;
+        const {openDeleteDialog } = this.state;
         return ( 
             <div className={classes.root}>
                 <div className={classes.container}>
