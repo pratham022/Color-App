@@ -72,7 +72,7 @@ class PaletteList extends Component {
                                     timeout={500}>
                                     <MiniPalette 
                                         {...palette} 
-                                        handleClick={() => {this.goToPalette(palette.id)}} 
+                                        handleClick={this.goToPalette} 
                                         // handleDelete={deletePalette} 
                                         openDialog = {this.openDialog}
                                         key={palette.id} 
@@ -84,7 +84,7 @@ class PaletteList extends Component {
 
                 <Dialog 
                     open={openDeleteDialog} 
-                    aria-labelledBy='delete-dialog-title' 
+                    aria-labelledby='delete-dialog-title' 
                     onClose={this.closeDialog}>
                     <DialogTitle id='delete-dialog'>Delete This Palette?</DialogTitle>
                     <List>
